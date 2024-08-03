@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Password Generator</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <h1>Password Generator</h1>
+        <hr>
+        <input type="text" id="password" readonly placeholder="Click the below button to Generate Password...">
+        <button onclick="Generate()">Generate Password</button>
+    </div>
+    <!--Script starts here-->
+    <script>
+        function Generate() {
+
+            const length = 12;
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+            let password = "";
+
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+
+            document.getElementById('password').value = password;
+
+        }
+    </script>
+    <!--Script Ends here-->
+</body>
+
+</html>
